@@ -1,7 +1,6 @@
 module.exports = function($scope, $location){
     var vm = this; 
-    var location = $location.search();          
-    console.log(location);
+    var location = $location.search();
         
      swal({
         title: 'Logged in!',
