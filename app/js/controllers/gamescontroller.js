@@ -127,7 +127,7 @@ module.exports = function($scope, $location, $timeout, gamesFactory, retreivedGa
 					cancelButtonText: "Cool!",  
 					allowOutsideClick: true,  
 					closeOnConfirm: true,   
-					closeOnCancel: true }, function(isConfirm){   
+					closeOnCancel: true }).then(function(isConfirm){   
 						if (isConfirm) {     
 							for (var i in self.games) {
 						     	if (self.games[i]._id == game._id) {
