@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dist/css
+dist/img
+dist/js
+dist/views
+dist/index.html
+dist/js/app.js

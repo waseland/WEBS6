@@ -1,0 +1,42 @@
+<!-- GameType -->
+<p>
+	<div class="btn-group">
+		<span class="bigText float-left">Game type</span>
+		<button id="selectGameType" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			Shanghai
+		</button>
+		<button type="button" style="height:34px;" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" style="margin-left:164px;" role="menu">
+			<li><a ng-click="gamesController.changeSelect('Shanghai')">Shanghai</a></li>
+			<li><a ng-click="gamesController.changeSelect('Snake')">Snake</a></li>
+			<li><a ng-click="gamesController.changeSelect('Ox')">Ox</a></li>
+			<li><a ng-click="gamesController.changeSelect('Ram')">Ram</a></li>
+			<li><a ng-click="gamesController.changeSelect('Dragon')">Dragon</a></li>
+			<li><a ng-click="gamesController.changeSelect('Rooster')">Rooster</a></li>
+			<li><a ng-click="gamesController.changeSelect('Monkey')">Monkey</a></li>
+		</ul>
+	</div>
+</p>
+
+<!-- MinPlayers -->
+<p>
+	<span class="bigText">Minimum players</span>
+	<input id="minPlayers" style="margin-left:10px; width:126px;" value="2" type="number">
+</p>
+
+<!-- MaxPlayers -->
+<p>
+	<span class="bigText">Maximum players</span>
+	<input id="maxPlayers" style="margin-left:5px; width:126px;" value="32" type="number">
+</p>
+
+<p>
+	<button ng-disabled="gamesController.creatingGame" ng-click="gamesController.createGame()" class="btn btn-danger">Create game</button>
+	<div id="addProgressBarHere" class="progressBarDiv">
+	</div>
+</p>
+
+
+

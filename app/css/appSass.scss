@@ -1,0 +1,66 @@
+// Vars
+$header-height: 60px;
+$font-stack:    Helvetica, sans-serif;
+$break-large: 852px;
+
+//Mixins
+@mixin box-shadow-mahjong-mayhem() {
+  	-webkit-box-shadow: -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         -6px 9px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+@mixin tile-size() {
+  	width: 72px;
+	height: 90px; 
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.activityIndicator {
+	position: absolute;
+	height:30px;
+	right:50px;
+	width:300px;
+	top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+}
+
+html {
+	body {
+		font-family: $font-stack;
+		margin: 0px;
+		padding: 0px;
+
+		.tile { 
+			position: absolute;
+			left: 10px;
+			top: 50px;
+			@include box-shadow-mahjong-mayhem();
+			@include tile-size();
+		}
+
+		.matchedTile { 
+			float: left;
+			left: 0px;
+			top: 0px;
+			@include box-shadow-mahjong-mayhem();
+			@include tile-size();
+		}
+	}
+}
+
+@media only screen and (max-width : $break-large) {
+	#progressBottomLabel { font-size: 13px; }
+}

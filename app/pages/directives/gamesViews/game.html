@@ -1,0 +1,22 @@
+<h3>
+	<p>
+		<span><b>{{ game.gameTemplate._id }}</b></span> 
+		<span ng-show="game.state == 'open'" >/Open</span>
+		<span ng-show="game.state == 'playing'" >/Playing</span>
+		<span ng-show="game.state == 'finished'" >/Finished</span>
+		<span ng-show="game.maxPlayers == game.players.length"><b>/Full</b></span>
+	</p>
+	<p>
+		<span>
+			<text ng-repeat="player in game.players"> {{ player.name }} 
+				{{ $index != game.players.length - 1 && game.players.length > 1 ? "-" : "" }}
+			</text>
+		</span>
+	</p>
+	<p>
+		<button ng-show="game.state == 'open' && !gamesController.hasPlayer(game, gamesController.user)
+		&& game.maxPlayers != game.players.length && game.players.length < game.maxPlayers" ng-click="gamesController.joinGame(game)" class="btn btn-success">Join game</button>
+		<button ng-show="gamesController.isSelfCreatedGame(game)
+		&& game.minPlayers <= game.players.length && game.state == 'open'" ng-click="gamesController.startGame(game)" class="btn btn-info">Start game</button>
+	</p>
+</h3>

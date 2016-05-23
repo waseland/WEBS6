@@ -1,0 +1,57 @@
+/*Suites*/
+
+div[class*=character-]{background-image: url("./../img/tile-sprite.png")}
+.character-name-1{background-position:      0 0;}
+.character-name-2{background-position:  -72px 0;}
+.character-name-3{background-position: -147px 0;}
+.character-name-4{background-position: -220px 0;}
+.character-name-5{background-position: -293px 0;}
+.character-name-6{background-position: -366px 0;}
+.character-name-7{background-position: -439px 0;}
+.character-name-8{background-position: -513px 0;}
+.character-name-9{background-position: -585px 0;}
+
+div[class*=bamboo-]{background-image: url("./../img/tile-sprite.png")}
+.bamboo-name-1{background-position:      0 -90px;}
+.bamboo-name-2{background-position:  -73px -90px;}
+.bamboo-name-3{background-position: -147px -90px;}
+.bamboo-name-4{background-position: -220px -90px;}
+.bamboo-name-5{background-position: -293px -90px;}
+.bamboo-name-6{background-position: -366px -90px;}
+.bamboo-name-7{background-position: -439px -90px;}
+.bamboo-name-8{background-position: -513px -90px;}
+.bamboo-name-9{background-position: -585px -90px;}
+
+div[class*=circle-]{background-image: url("./../img/tile-sprite.png")}
+.circle-name-1{background-position:      0 -180px;}
+.circle-name-2{background-position:  -73px -180px;}
+.circle-name-3{background-position: -147px -180px;}
+.circle-name-4{background-position: -220px -180px;}
+.circle-name-5{background-position: -293px -180px;}
+.circle-name-6{background-position: -366px -180px;}
+.circle-name-7{background-position: -439px -180px;}
+.circle-name-8{background-position: -513px -180px;}
+.circle-name-9{background-position: -585px -180px;}
+
+div[class*=dragon-]{background-image: url("./../img/tile-sprite.png")}
+.dragon-name-red{background-position:   -951px 0;}
+.dragon-name-green{background-position: -951px -90px;}
+.dragon-name-white{background-position: -951px -180px;}
+
+div[class*=wind-]{background-image: url("./../img/tile-sprite.png")}
+.wind-name-north{background-position:   -658px 0;}
+.wind-name-south{background-position: -732px 0;}
+.wind-name-east{background-position: -805px 0;}
+.wind-name-west{background-position: -878px 0;}
+
+div[class*=flower-]{background-image: url("./../img/tile-sprite.png")}
+.flower-name-bamboo{background-position:   -658px -180px;}
+.flower-name-plum{background-position: -732px -180px;}
+.flower-name-orchid{background-position: -805px -180px;}
+.flower-name-chrysantememum{background-position: -878px -180px;}
+
+div[class*=season-]{background-image: url("./../img/tile-sprite.png")}
+.season-name-spring{background-position:   -658px -90px;}
+.season-name-summer{background-position: -732px -90px;}
+.season-name-autumn{background-position: -805px -90px;}
+.season-name-winter{background-position: -878px -90px;}

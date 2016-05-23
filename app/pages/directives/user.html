@@ -1,0 +1,14 @@
+<div class="well">
+	<div class="jumbotron">
+		<div ng-show="isLoggedIn()">
+		  	<h1>oAuth</h1>
+		  	<p>You are logged in as {{user}}</p>
+		  	<p><button id="logoutButton" class="btn btn-primary btn-lg" ng-click="logOut()" role="button">Logout</button></p>
+	  	</div>
+	  	<div ng-show="!isLoggedIn()">
+	  	  	<h1>oAuth</h1>
+		  	<p>You are not logged in yet!</p>
+		  	<p><button id="loginButton" class="btn btn-primary btn-lg" ng-click="toLogin()" role="button">Login</button></p>
+	  	</div>
+	</div>
+</div>

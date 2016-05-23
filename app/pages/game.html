@@ -1,0 +1,16 @@
+<div>
+
+	<button ng-click="gameController.goBackToGames()" class="btn btn-danger btn-lg btnBackToGames">Go back to games</button>
+
+	<ul class="nav nav-pills">
+		<li role="presentation" class="{{gameController.activeTab == 'gameboard' ? 'active tabBarButton': 'tabBarButton'}}">
+			<a ng-click="gameController.goToGameboard()">Gameboard</a>
+		</li>
+		<li role="presentation" class="{{gameController.activeTab == 'players' ? 'active tabBarButton': 'tabBarButton'}}">
+			<a ng-click="gameController.goToPlayers()">Players</a>
+		</li>
+	</ul>
+
+	<div ui-view></div>
+	
+</div>

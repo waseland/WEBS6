@@ -1,0 +1,4 @@
+<li ng-show="game.state == 'playing' && !gamesController.isOwnedGame(game)" class="list-group-item" ng-repeat="game in gamesController.games | orderBy: '-createdOn'">
+	<game></game>
+	<button ng-show="game.state == 'playing'" ng-click="gamesController.showGame(game)" class="btn btn-danger">Go to game</button>
+</li> 

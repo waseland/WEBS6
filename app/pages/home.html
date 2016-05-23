@@ -1,0 +1,7 @@
+    <div style="text-align:center">
+        <h1>Welcome to mayong!</h1>
+        <p ng-if="list.login.username">Your username is {{list.login.username}}</p>
+        <a class="btn btn-success" ng-if="!list.login.username" href="http://mahjongmayhem.herokuapp.com/auth/avans?callbackUrl=http://localhost:3000/%23/auth">Log In!</a>
+        <button class="btn btn-info" ng-if="list.login.username" ng-click="list.goToGames()">Go To Games!</button>
+        <button class="btn btn-danger" ng-if="list.login.username" ng-click="list.logout()">Log Out!</button>
+    </div>

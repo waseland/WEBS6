@@ -1,0 +1,14 @@
+<div>
+	<tile ng-repeat="tile in gameController.game.tiles | tileNotMatched" ng-click="gameController.tileselect($event, tile)"></tile>
+	
+	<div ng-show="gameController.game.processing" class="progress activityIndicator">
+		<div  class=" progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+		    Processing match
+	  	</div>
+  	</div>
+
+</div>
+
+
+
+

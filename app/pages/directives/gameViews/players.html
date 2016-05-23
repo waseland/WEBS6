@@ -1,0 +1,14 @@
+<div>
+
+	<div ng-repeat="player in gameController.game.players" class="row matchedTilesPlayer">
+
+		<h3>{{ player.name}}</h3>
+		<h5>Aantal matches: {{matches.length / 2}}</h5>
+
+		<div id="matchedTiles" ng-repeat="tile in matches = (gameController.game.tiles | tileMatchedByPlayer:player | orderBy: 'match.foundOn')">
+		<div class="matchedTile {{tile.tile.suit.toLowerCase()}}-name-{{tile.tile.name.toLowerCase()}}"></div>
+		</div>
+		
+	</div> 
+
+</div>

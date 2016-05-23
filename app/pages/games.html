@@ -1,0 +1,37 @@
+<div>
+	<div class="col-md-6">
+		<ul class="nav">
+		<div class="well">
+			<h1>Games</h1>
+			<ul class="nav nav-pills">
+				<li role="presentation" class="{{gamesController.activeTab == 'open' ? 'active tabBarButton': 'tabBarButton'}}">
+				  <a  ng-click="gamesController.goToOpenGames()">Open</a>
+				</li>
+				<li role="presentation" class="{{gamesController.activeTab == 'playing' ? 'active tabBarButton': 'tabBarButton'}}">
+				  <a  ng-click="gamesController.goToPlayingGames()">Playing</a>
+				</li>
+				<li role="presentation" class="{{gamesController.activeTab == 'owned' ? 'active tabBarButton': 'tabBarButton'}}">
+				  <a  id="myGames" ng-click="gamesController.goToOwnedGames()">My games</a>
+				</li>
+				<li role="presentation" class="{{gamesController.activeTab == 'myplaying' ? 'active tabBarButton': 'tabBarButton'}}">
+				  <a ng-click="gamesController.goToMyPlayingGames()">My playing</a>
+				</li>
+			</ul>
+			<ul class="list-group">
+				<div ui-view></div>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- Create game -->
+
+	<div class="col-md-6">
+		<div class="well">
+			<h1 style="margin-bottom:20px;">Create game</h1>
+			<!-- Single button -->
+			<creategame id="createGame"></creategame>
+		</div>
+		
+		<user on-select="gamesController.toLogin()"></user>
+	</div>
+</div>
