@@ -1,6 +1,5 @@
 
 require('angular/angular.min');
-require('./angular-material.min')
 require('angular-ui-router/release/angular-ui-router.min');
 require('sweetalert2/dist/sweetalert2.min');
 
