@@ -1,5 +1,8 @@
 module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	var self = this;
+	var audio = {};
+	audio.match = new Audio('sounds/MarioCoin.wav');
+	audio.finish = new Audio('sounds/MarioWin.wav');
 	this.activeTab = "gameboard";
 	var Game = require("./../models/game");
 	this.game = new Game(gamesFactory, $stateParams["id"]);
@@ -11,6 +14,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 	}); 
 
 	socket.on("end", function(matchedTiles) {
+		audio.finish.play();
 		self.game.state = "finished";
 		var text = "The winner(s):";
 		var winners = self.game.getWinners();
@@ -60,6 +64,7 @@ module.exports = function($scope, $state, gamesFactory, $stateParams) {
 					$(targetTile1).remove();
 					$(targetTile2).remove();
 					this.game.addMatch(tile1, selectedTile);
+					audio.match.play();
 				}
 				else {					
 					// Voegt rode gloed toe
