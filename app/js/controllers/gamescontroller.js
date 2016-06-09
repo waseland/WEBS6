@@ -1,10 +1,11 @@
-module.exports = function($scope, $location, $timeout, gamesFactory, retreivedGames, $state) {
+module.exports = function($scope, $location, $timeout, gamesFactory, retreivedGames, $state, loginFactory) {
 	this.sockets = [];
-	this.login = JSON.parse(window.localStorage.getItem("login"));
+	this.login = loginFactory.getUser();
 	this.user = {
 		_id: this.login.username,
 		id: this.login.username
 	};
+	//this.user = UserService.getUser();
 	console.log(this.user);
 	this.activeTab = "open"
 	this.confirmButtonColor = "#337ab7"
