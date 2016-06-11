@@ -17,10 +17,20 @@ module.exports = function(grunt) {
        // This copies all the html and css into the dist/ folder
        expand: true,
        cwd: 'app/',
-       src: ['**/*.html', '**/*.css', '**/*.png', '**/*.wav'],
+       src: ['**/*.html', '**/*.css', '**/*.png', '**/*.wav', '**/*.scss'],
        dest: 'dist/'
        }
    },
+   sass: {
+			app: {
+                options: {
+                    sourcemap: true
+                },
+				files: {
+					'app/css/styles.css' : 'app/css/appSass.scss'
+				}
+			}
+		},
    watch: {
     js: {
         files: "app/**/*.js",
@@ -31,9 +41,10 @@ module.exports = function(grunt) {
         tasks: 'copy'
         },
         css: {
-        files: 'app/**/*.css',
-        tasks: 'copy'
+        files: ['app/**/*.css', 'app/**/*.scss'],
+        tasks: ['copy', 'sass']
         }
+
     },
    'http-server': {
         dev: {           
@@ -46,6 +57,7 @@ module.exports = function(grunt) {
  });
 
  // Load the npm installed tasks
+ grunt.loadNpmTasks('grunt-contrib-sass');
  grunt.loadNpmTasks('grunt-browserify');
  grunt.loadNpmTasks('grunt-contrib-copy');
  grunt.loadNpmTasks('grunt-contrib-watch');

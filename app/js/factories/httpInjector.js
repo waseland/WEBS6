@@ -5,6 +5,7 @@ module.exports 	= function (loginFactory)
 		{
 			if (loginFactory.isLoggedIn())
 			{
+				console.log("Hello");
 				config.headers['x-username'] 	= loginFactory.getEmail();
 				config.headers['x-token'] 		= loginFactory.getToken();
 			}
