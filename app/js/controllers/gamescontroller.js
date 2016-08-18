@@ -1,15 +1,17 @@
-module.exports = function($scope, $location, $timeout, gamesFactory, retreivedGames, $state) {
+module.exports = function($scope, $location, $timeout, gamesFactory, retreivedGames, $state, loginFactory) {
 	this.sockets = [];
-	this.login = JSON.parse(window.localStorage.getItem("login"));
+	this.login = loginFactory.getUser();
 	this.user = {
 		_id: this.login.username,
 		id: this.login.username
 	};
-	console.log(this.user);
+	
 	this.activeTab = "open"
 	this.confirmButtonColor = "#337ab7"
 
 	this.gameType = "Shanghai";
+	this.minPlayers = 2;
+	this.maxPlayers = 32;
 
 	this.games = retreivedGames;
 	this.creatingGame = false	
@@ -33,8 +35,8 @@ module.exports = function($scope, $location, $timeout, gamesFactory, retreivedGa
 	}	
 	
 	this.createGame = function() {
-		var minPlayers = $("#minPlayers").val();
-		var maxPlayers = $("#maxPlayers").val();
+		var minPlayers = this.minPlayers;
+		var maxPlayers = this.maxPlayers;
 		if(minPlayers != "" && maxPlayers != "" && minPlayers > 0 && minPlayers < 33 && maxPlayers > 1 && maxPlayers < 33 && maxPlayers > minPlayers){
 			$("#addProgressBarHere").append(progressBarToAdd)
 			self.creatingGame = true

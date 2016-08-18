@@ -24,6 +24,13 @@ module.exports = function() {
         var login =  JSON.parse(window.localStorage.getItem("login"));
         return login.token;
     };
+    
+    loginFactory.getUser = function(){
+        var user = {};      
+        user.username = loginFactory.getEmail();
+        user.token = loginFactory.getToken();
+        return user;
+    }
 
     return loginFactory;
 };
